@@ -1,23 +1,26 @@
-<h2>To Do List Today</h2>
-<div class="to-do-list">
-  @for (task of tasks; track task) {
-  <div id="task-{{ task.id }}" class="task">
-    <span>
-      {{ task.title }}
-    </span>
-    <span class="actions">
-      <input id="task-input-{{ task.id }}" type="checkbox" />
-      <button id="btn-delete-{{ task.id }}" (click)="onDeleteTask(task.id)" class="btn-delete">
-        x
-      </button>
-    </span>
+<section class="to-do">
+  <h2>To Do List Today</h2>
+  <div class="to-do-list">
+    @for (task of tasks; track task) {
+    <div id="task-{{ task.id }}" class="task">
+      <span class="title">
+        {{ task.title }}
+      </span>
+      <span class="actions">
+        <button
+          id="btn-delete-{{ task.id }}"
+          class="btn-delete-task"
+          (click)="onDeleteTask(task.id)"
+        >
+          x
+        </button>
+      </span>
+    </div>
+    }
   </div>
-  }
-</div>
 
-<div>
   <form [formGroup]="toDoForm" class="actions">
-    <input type="text" formControlName="taskName" placeholder="Add new task" />
-    <button id="btn-add-task" (click)="onAddTask()">Add</button>
+    <input id="input-add-task" type="text" formControlName="taskName" placeholder="Add new task" />
+    <button id="btn-add-task" class="btn-add-task" (click)="onAddTask()">Add</button>
   </form>
-</div>
+</section>

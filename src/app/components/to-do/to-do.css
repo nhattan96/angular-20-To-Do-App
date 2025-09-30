@@ -1,3 +1,7 @@
+.to-do {
+  width: 600px;
+}
+
 .to-do-list {
   list-style: none;
   padding: 0;
@@ -11,14 +15,40 @@
   align-items: center;
 }
 
+.title {
+  overflow-wrap: break-word;
+  width: 80%;
+}
+
 .actions {
   display: flex;
   gap: 10px;
 }
 
-.btn-delete {
+form {
+  margin-top: 20px;
+}
+
+input[type='text'] {
+  width: 70%;
+  height: 20px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-delete-task {
+  width: 30px;
+  height: 30px;
   background-color: rgb(255, 128, 128);
   color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-add-task {
+  background-color: rgb(128, 255, 128);
   border: none;
   cursor: pointer;
   border-radius: 5px;
