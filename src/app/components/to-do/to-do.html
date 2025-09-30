@@ -3,6 +3,7 @@
   <div class="to-do-list">
     @for (task of tasks; track task) {
     <div id="task-{{ task.id }}" class="task">
+      <input type="checkbox" [checked]="task.done" (change)="onDoneTask(task.id)" />
       <span class="title">
         {{ task.title }}
       </span>
